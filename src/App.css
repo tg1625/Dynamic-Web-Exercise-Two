@@ -1,0 +1,41 @@
+.siteWrapper{
+    margin:0 auto;
+    max-width: 1080px;
+    width:100%;
+    padding:0 25px;
+}
+
+.home{
+    margin:0 auto;
+    max-width:640px;
+}
+
+.home h1{
+    text-align:center;
+}
+
+.weatherInfo{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+}
+
+.weatherInfo_Image{
+    flex-basis:50%;
+}
+
+.weatherInfo_Data{
+    flex-basis:50%;
+}
+
+.weatherInfo_Data .currentTemperature p{
+    font-size:6em;
+    font-weight: bold;
+    line-height:1;
+    margin:0;
+}
+
+.weatherInfo_Data .otherTemperature p{
+    font-size:1.5em;
+    line-height:1;
+}

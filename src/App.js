@@ -8,14 +8,16 @@ import {
 } from "react-router-dom";
 
 import Home from './containers/Home.js';
+import Header from './components/Header.js';
 
-//API Key
-const defaultKey = "3170d73852c5601a02c180337486d21c";
-
+import './App.css'
 
 function App() {
   return (
-    <Home />
+    <div class="siteWrapper">
+      <Header />
+      <Home />
+    </div>
   );
 }
 
