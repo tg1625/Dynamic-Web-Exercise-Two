@@ -15,8 +15,15 @@ import './App.css'
 function App() {
   return (
     <div className="siteWrapper">
-      <Header />
-      <Home />
+      <Header/>
+      <Router>
+        <Switch>
+          <Route path="/">
+            <Home/>
+          </Route>
+          
+        </Switch>
+      </Router>
     </div>
   );
 }
