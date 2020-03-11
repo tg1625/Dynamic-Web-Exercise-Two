@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from "axios";
 
 import { useHistory} from "react-router-dom";
+import WeatherImage from '../components/WeatherImage.js';
 
 //API Key
 const defaultKey = "77fa4162992373c356c1c0e0bebc7541";
@@ -17,6 +18,7 @@ function Home(){
     const [wind, setWind] = useState("");
     const [humidity,setHumidity] = useState("");
     const [cloudiness, setCloudiness] = useState("");
+    const [weatherType, setWeatherType] = useState("");
 
 
     let history = useHistory();
@@ -55,13 +57,10 @@ function Home(){
             setLowTemperature(weatherData.main.temp_min);
             setIcon(weatherData.weather[0].icon);
             setHumidity(weatherData.main.humidity);
-            
-        }
-        if (weatherData.wind){
             setWind(weatherData.wind.speed);
-        }
-        if (weatherData.clouds){
             setCloudiness(weatherData.clouds.all/200);
+            setWeatherType(weatherData.weather[0].main);
+            
         }
     }, [weatherData]);
 
@@ -72,16 +71,14 @@ function Home(){
             <h1>{city}</h1>
 
             <div className="weatherInfo">
-                <div className="weatherInfo_Image">
-                    <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`}/>
-                </div>
+                <WeatherImage weatherType={weatherType} />
                 <div className="weatherInfo_Data">
                     <div className="currentTemperature">
                         <p>{currentTemp}&#176;</p>
                     </div>
                     <div className="otherTemperature">
-                        <p>High temp: <strong>{highTemp}&#176;</strong></p>
-                        <p>Low temp: <strong>{lowTemp}&#176;</strong></p>
+                        <p>High: <strong>{highTemp}&#176;</strong></p>
+                        <p>Low: <strong>{lowTemp}&#176;</strong></p>
                     </div>
                     <p>Humidity: {humidity}%</p>
                     <p>Wind: {wind}mph</p>

@@ -51,22 +51,23 @@
 
 .weatherInfo{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     flex-wrap: nowrap;
     align-items:center;
 }
 
 .weatherInfo_Image{
-    flex-basis:50%;
+    /* flex-basis:50%; */
     text-align: right;
-}
-.weatherInfo_Image img{
-    width:100px;
+    font-size:7em;
 }
 
+
 .weatherInfo_Data{
-    flex-basis:50%;
+    /* flex-basis:50%; */
+    text-align:center;
 }
+
 
 .weatherInfo_Data .currentTemperature p{
     font-size:8em;
@@ -75,7 +76,14 @@
     margin:0;
 }
 
+.weatherInfo_Data .otherTemperature{
+    display:flex;
+    /* align-items:center; */
+}
+
 .weatherInfo_Data .otherTemperature p{
+    flex-basis:50%;
+    margin-bottom:0;
     font-size:1.5em;
     line-height:1;
 }
