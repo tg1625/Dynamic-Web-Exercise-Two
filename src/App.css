@@ -1,0 +1,90 @@
+.siteWrapper{
+    margin:0 auto;
+    max-width: 1080px;
+    width:100%;
+    padding:0 25px;
+}
+
+.header{
+    background-color: white;
+    margin-top:10px;
+    padding:5px 10px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cityNav{
+    display:flex;
+}
+
+.cityNav a{
+    display:block;
+    padding:0px 7px;
+    text-decoration:none;
+    font-size:1em;
+    font-size:bolder;
+    color:black;
+    border-bottom:1px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.cityNav a:hover{
+    border-bottom:1px solid black;
+}
+
+.home{
+    margin:10px auto 0 auto;
+    max-width:1080px;
+    width:100%;
+    padding:10px;
+    background-color:white;
+    border:1px solid #aaa;
+}
+
+.home h1{
+    text-align:center;
+    font-size:2em;
+    margin-bottom:0;
+    text-transform: capitalize;
+}
+
+.weatherInfo{
+    display:flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    align-items:center;
+}
+
+.weatherInfo_Image{
+    text-align: right;
+    font-size:7em;
+}
+
+.weatherInfo_Data{
+    text-align:center;
+}
+
+.weatherInfo_Data .currentTemperature{
+    min-width: 300px;
+}
+
+.weatherInfo_Data .currentTemperature p{
+    font-size:8em;
+    font-weight: bold;
+    line-height:1;
+    margin:0;
+}
+
+.weatherInfo_Data .otherTemperature{
+    display:flex;
+    align-items:center;
+    min-width: 300px;
+}
+
+.weatherInfo_Data .otherTemperature p{
+    flex-basis:50%;
+    margin-bottom:0;
+    font-size:1.5em;
+    line-height:1;
+}
