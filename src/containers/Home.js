@@ -14,7 +14,6 @@ function Home(){
     const [currentTemp, setCurrentTemperature] = useState("");
     const [highTemp, setHighTemperature] = useState("");
     const [lowTemp, setLowTemperature] = useState("");
-    const [icon, setIcon] = useState("01n");
     const [wind, setWind] = useState("");
     const [humidity,setHumidity] = useState("");
     const [cloudiness, setCloudiness] = useState("");
@@ -36,7 +35,6 @@ function Home(){
     //get API data 
     useEffect(() =>{   
         if(city){
-            console.log(`Query: https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${"imperial"}&appid=${defaultKey}`);
         axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${"imperial"}&appid=${defaultKey}`
             )
@@ -55,7 +53,6 @@ function Home(){
             setCurrentTemperature(weatherData.main.temp);
             setHighTemperature(weatherData.main.temp_max);
             setLowTemperature(weatherData.main.temp_min);
-            setIcon(weatherData.weather[0].icon);
             setHumidity(weatherData.main.humidity);
             setWind(weatherData.wind.speed);
             setCloudiness(weatherData.clouds.all/200);
@@ -64,7 +61,6 @@ function Home(){
         }
     }, [weatherData]);
 
-    console.log("Weather data: ", weatherData);
 
     return(
         <div className="home" style={{backgroundColor: `rgba(0,0,0,${cloudiness})`}}>

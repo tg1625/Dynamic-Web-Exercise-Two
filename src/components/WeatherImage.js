@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud, faCloudRain, faSun } from '@fortawesome/free-solid-svg-icons';
 
 function WeatherImage({weatherType}){
-    console.log("weatherType", weatherType);
     const Icon = ({weatherType}) =>{
         switch(weatherType){
             case 'Clouds': return <FontAwesomeIcon icon={faCloud} />
@@ -17,7 +16,6 @@ function WeatherImage({weatherType}){
         <div className="weatherInfo_Image">
             <Icon weatherType={weatherType} />
         </div>
-
     );   
 }
 

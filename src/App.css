@@ -57,17 +57,17 @@
 }
 
 .weatherInfo_Image{
-    /* flex-basis:50%; */
     text-align: right;
     font-size:7em;
 }
 
-
 .weatherInfo_Data{
-    /* flex-basis:50%; */
     text-align:center;
 }
 
+.weatherInfo_Data .currentTemperature{
+    min-width: 300px;
+}
 
 .weatherInfo_Data .currentTemperature p{
     font-size:8em;
@@ -78,7 +78,8 @@
 
 .weatherInfo_Data .otherTemperature{
     display:flex;
-    /* align-items:center; */
+    align-items:center;
+    min-width: 300px;
 }
 
 .weatherInfo_Data .otherTemperature p{
